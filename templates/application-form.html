@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}Skills-Flask{% endblock %}
+
+{% block head %}
+    <!-- tells the child template to inherit what's written
+    in the base template between the {head} tags. -->
+    {{ super() }}
+{% endblock %}
+
+{% block content %}
+
+    <h2>Job Application</h2>
+
+    <p>Please fill out the following form before submitting your application.</p>
+
+    <!-- makes a form gathering first name, last name, salary, and job title -->
+    <form action="/application-response" method="POST">
+      <p><label for="first_name">First Name: <input type="text" name="first_name" required></label></p>
+      <p><label for="last_name">Last Name: <input type="text" name="last_name" required></label></p>
+      <p><label for="salary">Minimum Salary Requirement (pleae enter a number only): <input type="text" name="salary" required></label></p>
+      <p><label for="job_title">For which job are you applying?: </label><select name="job_title" required>
+          <option value="Software Engineer">Software Engineer</option>
+          <option value="QA Engineer">QA Engineer</option>
+          <option value="Product Manager">Product Manager</option>
+        </select></p>
+      <p><input type="submit"></p>
+    </form>
+
+{% endblock %}

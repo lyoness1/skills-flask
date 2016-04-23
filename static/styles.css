@@ -1,0 +1,10 @@
+
+/* sets the background of the input text boxes in forms yellow */
+input[type="text"] {
+    background-color: yellow;
+}
+
+/* makes h2 headers red */
+h2 {
+    color: red;
+}

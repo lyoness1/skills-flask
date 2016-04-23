@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}Application Response{% endblock %}
+
+{% block head %}
+    <!-- tells the child template to inherit what's written
+    in the base template between the {head} tags. -->
+    {{ super() }}
+{% endblock %}
+
+{% block content %}
+
+    <h2>This is the sample home page.</h2>
+
+    <!-- implimented just for Flask route practice -->
+    <form action="/application-form">
+        <input type="submit" value="Take me to the application!">
+    </form>
+
+{% endblock %}

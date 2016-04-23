@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- provides a space for each page to have specific head info -->
+    {% block head %}
+
+    <!-- links to Bootstrap CSS -->
+    <link rel="stylesheet"
+          href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.css"/>
+    
+    <!-- link to custom CSS -->
+    <link rel="stylesheet" href="/static/styles2.css"/>
+
+    <!-- provides a space for each page to have it's own title -->
+    <title>{% block title %}{% endblock %}</title>
+
+    {% endblock %}
+
+</head>
+
+
+<body>
+
+    <!-- makes a container for the page content -->
+    <div class="content">
+        <!-- shows flash messages on every page, when relevant -->
+            {% for message in get_flashed_messages() %} {{message}} {% endfor %}
+            
+        <!-- this is where custom content goes on each page -->
+        {% block content %}
+            
+        {% endblock %}
+    </div>
+
+    <!-- makes a footer -->
+    <div class="footer">
+        {% block footer %}
+        &copy; Copyright 2016 by Company.
+        {% endblock %}
+    </div>
+
+</body>
+
+
+</html>
